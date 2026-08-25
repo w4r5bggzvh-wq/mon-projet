@@ -18,12 +18,13 @@ document.getElementById("boutonAjouter").addEventListener("click", function() {
   
   // Étape 1 : récupérer le texte tapé
   let texte = document.getElementById("champtexte").value;
-  
+  if(texte!==""){
   // Étape 2 : construire le HTML à ajouter
-  let nouvelElement = "<li>" + texte + "</li>";
+  let nouvelElement = "<li>" + texte +  " <button onclick='this.parentElement.remove()'>Supprimer</button></li>";
   
   // Étape 3 : ajouter ce HTML à la liste
   document.getElementById("liste").innerHTML += nouvelElement;
   //Etape 4 : vider le champ après ajout
   document.getElementById("champtexte").value="";
+  }
 });
