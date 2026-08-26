@@ -80,3 +80,6 @@ li{
 li span{
     cursor: pointer;
 }
+.cache{
+    display: none;
+}

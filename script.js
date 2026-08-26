@@ -77,6 +77,27 @@ function chargertache(){
 
 
 chargertache();
-
+function filtrer(type){
+    let taches =document.getElementById("liste").children;
+    for(let i=0;i<taches.length;i++){
+        let tache = taches[i];
+        let estTerminee=tache.querySelector("span").classList.contains("termine");
+        if(type=="toutes"){
+            tache.classList.remove("cache");
+        }else if(type=="actives"){
+            if(estTerminee){
+                tache.classList.add("cache");
+            }else{
+                tache.classList.remove("cache");
+            }
+        }else if(type=="terminees"){
+            if(estTerminee){
+                tache.classList.remove("cache")
+            }else{
+                tache.classList.add("cache");
+            }
+        }
+    }
+}
 
 
