@@ -40,7 +40,7 @@ document.getElementById("champtexte").addEventListener("keydown",function(event)
 function Ajouterlatache(){
 let texte=document.getElementById("champtexte").value;
 if(texte !== ""){
-let nouvelElement="<li>" + texte + "<button onclick='this.parentElement.remove(); mettreajoutcompteur();'>Supprimer</button></li>";
+let nouvelElement="<li> <span onclick='this.classList.toggle(\"termine\")'>" + texte + "</span><button onclick='this.parentElement.remove(); mettreajoutcompteur();'>Supprimer</button></li>";
 document.getElementById("liste").innerHTML+=nouvelElement;
 document.getElementById("champtexte").value=""; 
 mettreajoutcompteur();

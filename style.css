@@ -70,3 +70,10 @@ li{
     justify-content: space-between;
     align-items: center;
 }
+.termine{
+    text-decoration: line-through;
+    color: gray;
+}
+li span{
+    cursor: pointer;
+}
