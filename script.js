@@ -40,10 +40,11 @@ document.getElementById("champtexte").addEventListener("keydown",function(event)
 function Ajouterlatache(){
 let texte=document.getElementById("champtexte").value;
 if(texte !== ""){
-let nouvelElement="<li> <span onclick='this.classList.toggle(\"termine\")'>" + texte + "</span><button onclick='this.parentElement.remove(); mettreajoutcompteur();'>Supprimer</button></li>";
+let nouvelElement="<li> <span onclick='this.classList.toggle(\"termine\");sauvegardertaches()'>" + texte + "</span><button onclick='this.parentElement.remove(); mettreajoutcompteur();sauvegardertaches()'>Supprimer</button></li>";
 document.getElementById("liste").innerHTML+=nouvelElement;
 document.getElementById("champtexte").value=""; 
 mettreajoutcompteur();
+sauvegardertaches()
 }
 }
 
@@ -58,14 +59,24 @@ Ajouterlatache();
 });
 function mettreajoutcompteur(){
 let nombre = document.getElementById("liste").children.length;
-document.getElementById("compteur").textContent="tu as"  + nombre + "tâche(s) a faire";
+document.getElementById("compteur").textContent="tu as "  + nombre + " tâche(s) a faire";
 
  }
 
+function sauvegardertaches(){
+    let contenuliste=document.getElementById("liste").innerHTML;
+    localStorage.setItem("tâches",contenuliste);
+}
+function chargertache(){
+    let contenusauvegarde= localStorage.getItem("tâches");
+    if(contenusauvegarde !== null){
+        document.getElementById("liste").innerHTML=contenusauvegarde;
+        mettreajoutcompteur();
+    }
+}
 
 
-
-
+chargertache();
 
 
 

@@ -22,6 +22,7 @@ box-shadow:0 0 15px rgb(177, 131, 220)  ;
     text-align: center;
     background-color: rgb(232, 133, 165);
     border-radius: 19px;
+    margin-bottom: 40px;
 }
 input{
 width: 100%;
@@ -42,9 +43,10 @@ input:focus{
     padding: 10px;
 }
 button{
-    background-color: aliceblue;
+    background-color: rgb(203, 30, 157);
+    color: white;
     border-radius: 30px;
-    padding: 7px;
+    padding: 7px 14px;
     border: none;
     margin: 3px;
     cursor: pointer;
@@ -52,17 +54,18 @@ button{
 .papaenfant{
     display: flex;
     gap: 70px;
+    align-items: flex-start;
 }
 .enfant{
     background-color:rgb(218, 136, 164);
-    border-radius: 50px;
-    padding: 80px; 
+    border-radius: 30px;
+    padding: 30px; 
      box-shadow: 0 0 15px rgb(149, 123, 236);
 }
 .laliste{
     background-color:rgb(218, 206, 210);
     border-radius: 50px;
-    padding: 80px; 
+    padding: 40px; 
     box-shadow: 0 0 15px rgb(149, 123, 236);
 }
 li{
