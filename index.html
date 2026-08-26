@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon projet JS</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1 id="titre">Bonjour</h1>
-<button id="monboutton">clique-moi</button>
-<input type="text" id="champtexte">
+    <header>TO DO LISTE</header>
+    <div class="conteneur">
+<h1 class="titre">Viens avec moi organiser tes objectifs</h1>
+
+<div class="papaenfant">
+   <div class="enfant">
+    
+<label for="">entrer votre plan</label><input type="text" id="champtexte">
+<!-- <button id="monboutton">On verra</button>-->
 <button id="boutonAjouter">Ajouter</button>
-<ul id="liste"></ul>
+ </div>
+<div class="laliste">
+    <p id="compteur">tu as 0 tâche a faire</p>
+    <ul id="liste"></ul>
     <script src="script.js"></script>
+
+     </div>
+   </div>
+
+</div>
 </body>
 </html>
