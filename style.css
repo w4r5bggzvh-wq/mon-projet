@@ -83,3 +83,12 @@ li span{
 .cache{
     display: none;
 }
+@media (max-width: 768px){
+    .conteneur{
+        padding: 20px;
+        margin: 10px;
+    }
+    .papaenfant{
+        flex-direction: column;
+    }
+}
