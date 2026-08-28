@@ -119,6 +119,11 @@ li span{
         width: 100%;
         box-sizing: border-box;
     }
+
+    li{
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 input[type="datetime-local"] {
   width: 95%;
