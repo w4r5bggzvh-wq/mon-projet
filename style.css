@@ -95,4 +95,12 @@ li span{
     input{
         max-width: 100%;
     }
+    .enfant{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .laliste{
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
