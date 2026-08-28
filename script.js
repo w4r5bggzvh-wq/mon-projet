@@ -39,10 +39,16 @@ document.getElementById("champtexte").addEventListener("keydown",function(event)
 });*/
 function Ajouterlatache(){
 let texte=document.getElementById("champtexte").value;
+let dateEcheance = document.getElementById("dateEcheance").value;
 if(texte !== ""){
-let nouvelElement="<li> <span onclick='this.classList.toggle(\"termine\");sauvegardertaches()'>" + texte + "</span><button onclick='this.parentElement.remove(); mettreajoutcompteur();sauvegardertaches()'>Supprimer</button></li>";
+let texteDate="";
+if(dateEcheance!==""){
+    texteDate="(" + dateEcheance +")";
+}
+let nouvelElement="<li> <span onclick='this.classList.toggle(\"termine\");sauvegardertaches()'>" + texte + texteDate + "</span><button onclick='modifierTache(this)'>Modifier</button><button onclick='this.parentElement.remove(); mettreajoutcompteur();sauvegardertaches()'>Supprimer</button></li>";
 document.getElementById("liste").innerHTML+=nouvelElement;
 document.getElementById("champtexte").value=""; 
+document.getElementById("dateEcheance").value="";
 mettreajoutcompteur();
 sauvegardertaches()
 }
@@ -92,7 +98,7 @@ function filtrer(type){
             }
         }else if(type=="terminees"){
             if(estTerminee){
-                tache.classList.remove("cache")
+                tache.classList.remove("cache"); 
             }else{
                 tache.classList.add("cache");
             }
@@ -100,4 +106,12 @@ function filtrer(type){
     }
 }
 
+function modifierTache(bouton){
+let span = bouton.parentElement.querySelector("span");
+let nouveauTexte = prompt("modifie ta tache :",span.textContent);
+if(nouveauTexte !== null && nouveauTexte !== ""){
+    span.textContent = nouveauTexte;
+    sauvegardertaches();
 
+}
+}
