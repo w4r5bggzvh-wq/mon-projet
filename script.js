@@ -43,7 +43,9 @@ let dateEcheance = document.getElementById("dateEcheance").value;
 if(texte !== ""){
 let texteDate="";
 if(dateEcheance!==""){
-    texteDate="(" + dateEcheance +")";
+    if(dateEcheance!==""){
+    texteDate=" (" + formaterDate(dateEcheance) +")";
+}
 }
 let nouvelElement="<li> <span onclick='this.classList.toggle(\"termine\");sauvegardertaches()'>" + texte + texteDate + "</span><button onclick='modifierTache(this)'>Modifier</button><button onclick='supprimerTache(this)'>Supprimer</button></li>";
 document.getElementById("liste").innerHTML+=nouvelElement;
@@ -132,4 +134,13 @@ function toutSupprimer(){
         mettreajoutcompteur();
         sauvegardertaches();
     }
+}
+function formaterDate(dateISO) {
+  let date = new Date(dateISO);
+  let jour = String(date.getDate()).padStart(2, "0");
+  let mois = String(date.getMonth() + 1).padStart(2, "0");
+  let annee = date.getFullYear();
+  let heure = String(date.getHours()).padStart(2, "0");
+  let minute = String(date.getMinutes()).padStart(2, "0");
+  return jour + "/" + mois + "/" + annee + " à " + heure + "h" + minute;
 }
