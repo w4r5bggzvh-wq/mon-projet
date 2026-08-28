@@ -45,7 +45,7 @@ let texteDate="";
 if(dateEcheance!==""){
     texteDate="(" + dateEcheance +")";
 }
-let nouvelElement="<li> <span onclick='this.classList.toggle(\"termine\");sauvegardertaches()'>" + texte + texteDate + "</span><button onclick='modifierTache(this)'>Modifier</button><button onclick='this.parentElement.remove(); mettreajoutcompteur();sauvegardertaches()'>Supprimer</button></li>";
+let nouvelElement="<li> <span onclick='this.classList.toggle(\"termine\");sauvegardertaches()'>" + texte + texteDate + "</span><button onclick='modifierTache(this)'>Modifier</button><button onclick='supprimerTache(this)'>Supprimer</button></li>";
 document.getElementById("liste").innerHTML+=nouvelElement;
 document.getElementById("champtexte").value=""; 
 document.getElementById("dateEcheance").value="";
@@ -114,4 +114,22 @@ if(nouveauTexte !== null && nouveauTexte !== ""){
     sauvegardertaches();
 
 }
+}
+
+function supprimerTache(bouton){
+    let confirmation= confirm("est-tu sûre de vouloir supprimer cette tâche");
+    if(confirmation){
+        bouton.parentElement.remove();
+        mettreajoutcompteur();
+        sauvegardertaches();
+    }
+}
+
+function toutSupprimer(){
+    let confirmation=confirm("est-tu sûre de vouloir supprimer toutes les tâches");
+    if(confirmation){
+        document.getElementById("liste").innerHTML = "";
+        mettreajoutcompteur();
+        sauvegardertaches();
+    }
 }
